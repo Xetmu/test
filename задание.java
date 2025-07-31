@@ -13,49 +13,44 @@ import java.io.IOException;
 
 public class Main
 {
-	public static void main(String[] args) {
+  public static void main(String[] args) {
     BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
-   	System.out.print("Input Expression : ");
-    	String str="";
-    	try{
-     	  str = reader.readLine();
-    	}
-    	catch(IOException ioe){
-    		System.err.println("Неправильный формат строки!");  
-    	}
-    	String result = calc(str);
-		System.out.println(result);
+    System.out.print("Input Expression : ");
+    String str="";
+    try{
+      str = reader.readLine();
+    }
+    catch(IOException ioe){
+      System.err.println("Неправильный формат строки!");  
+    }
+    String result = calc(str);
+    System.out.println(result);
   }
 	
-    public static String calc(String str) {
-    	return String.valueOf(isRightNumber(str));
-    }
+  public static String calc(String str) {
+    return String.valueOf(isRightNumber(str));
+  }
     private static Integer isRightNumber(String input)
-    {
-		  String[] words = input.split(" ");
-		  if(words.length%2==0)
-      {
-        System.err.println("throws Exception "); 
-        throw new ArithmeticException();
+  {
+    String[] words = input.split(" ");
+    if(words.length%2==0){
+      System.err.println("throws Exception "); 
+      throw new ArithmeticException();
         }
-      if(words.length==1)
-      {
+      if(words.length==1){
         System.err.println("throws Exception //т.к. строка не является математической операцией"); 
         throw new ArithmeticException();
       }
       if(words.length!=3)
-        for(int i = 0; i< words.length; i++)
-        {
-          if((i%2)==0)
-          {
+        for(int i = 0; i< words.length; i++){
+          if((i%2)==0){
             Integer k = Integer.valueOf(words[i]);
             if(!(-1<k&&k<11)){
               System.err.println("Некорректный ввод, на месте числа иной символ"); 
               throw new ArithmeticException();
             }
           }
-          if((i%2)==1)
-          {
+          if((i%2)==1){
             if(!((words[i].equals("+")||(words[i].equals("-"))||(words[i].equals("*"))||(words[i].equals("/"))))){
               System.err.println(i + words[i] + "Некорректный ввод, на месте знака операции иной символ"); 
               throw new ArithmeticException();
