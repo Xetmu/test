@@ -14,21 +14,21 @@ import java.io.IOException;
 public class Main
 {
 	public static void main(String[] args) {
-		System.out.println(calc());
+	  BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
+    System.out.print("Input Expression : ");
+    String str="";
+    try{
+       str = reader.readLine();
+    }
+    catch(IOException ioe){
+      System.err.println("Неправильный формат строки!");  
+    }
+    String result = calc(str);
+		System.out.println(result);
 	}
 	
-	public static String calc() {
-	    
-	    BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
-        System.out.print("Input Expression : ");
-        String name="";
-        try{
-             name = reader.readLine();
-        }
-        catch(IOException ioe){
-            System.err.println("Неправильный формат строки!");  
-        }
-        return String.valueOf(isRightNumber(name));
+	public static String calc(String str) {
+        return String.valueOf(isRightNumber(str));
 	}
 	private static Integer isRightNumber(String input)
 	{
@@ -45,6 +45,7 @@ public class Main
           throw new ArithmeticException();
         }
         
+        if(words.length!=3)
         for(int i = 0; i< words.length; i++)
         {
           
