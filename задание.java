@@ -69,30 +69,30 @@ public class Main
 			         }
 		        }
 	        try {
-			        Integer i1 = Integer.valueOf(words[0]);
-			        Integer i2 = Integer.valueOf(words[2]);
-			        if(i1<0 || i1>10 || i2<0 || i2>10)
-			        {
-					System.err.println("Неправильный формат строки!");  
-			        	throw new ArithmeticException();
-			        }
-			        switch(words[1]){
-			        	case "+":
-			               		return (i1+i2);
-			                
-			        	case "-":
-			               		return (i1-i2);
-		
-			           	case "/":
-			               		if(i2==0)
-			                    		System.err.println("Делить на ноль нельзя!");  
-			               			return (i1/i2);     
-			           	case "*":
-			               		return (i1*i2);    
-			           	default:
-			           		System.err.println("Неправильный формат строки!");  
-			           		throw new ArithmeticException();   
-			        }
+		        Integer i1 = Integer.valueOf(words[0]);
+		        Integer i2 = Integer.valueOf(words[2]);
+		        if(i1<0 || i1>10 || i2<0 || i2>10)
+		        {
+				System.err.println("Неправильный формат строки!");  
+		        	throw new ArithmeticException();
+		        }
+		        switch(words[1]){
+		        	case "+":
+		               		return (i1+i2);
+		                
+		        	case "-":
+		               		return (i1-i2);
+	
+		           	case "/":
+		               		if(i2==0)
+		                    		System.err.println("Делить на ноль нельзя!");  
+		               			return (i1/i2);     
+		           	case "*":
+		               		return (i1*i2);    
+		           	default:
+		           		System.err.println("Неправильный формат строки!");  
+		           		throw new ArithmeticException();   
+		        }
 	        }
 	        catch (NumberFormatException e) {  
 			System.err.println("Неправильный формат строки!"); 
