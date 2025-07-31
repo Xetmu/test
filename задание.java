@@ -1,6 +1,9 @@
 /******************************************************************************
 
 Welcome to GDB Online.
+GDB online is an online compiler and debugger tool for C, C++, Python, Java, PHP, Ruby, Perl,
+C#, OCaml, VB, Swift, Pascal, Fortran, Haskell, Objective-C, Assembly, HTML, CSS, JS, SQLite, Prolog.
+Code, Compile, Run and Debug online from anywhere in world.
 
 *******************************************************************************/
 import java.util.Scanner;
@@ -14,7 +17,7 @@ public class Main
 		System.out.println(calc());
 	}
 	
-	public static Integer calc() {
+	public static String calc() {
 	    
 	    BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
         System.out.print("Input Expression : ");
@@ -25,7 +28,7 @@ public class Main
         catch(IOException ioe){
             System.err.println("Неправильный формат строки!");  
         }
-        return isRightNumber(name);
+        return String.valueOf(isRightNumber(name));
 	}
 	private static Integer isRightNumber(String input)
 	{
