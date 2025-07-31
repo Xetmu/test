@@ -58,10 +58,6 @@ public class Main
           }
           if((i%2)==1)
           {
-            if(!(words[i].equals("+"))){
-              System.err.println(i + words[i] + "Неrrrкорректный ввод, на месте знака операции иной символ"); 
-                throw new ArithmeticException();
-            }
             if(!(words[i].equals("+")&&!(words[i].equals("-"))&&!(words[i].equals("*"))&&!(words[i].equals("/")))){
               System.err.println(i + words[i] + "Некорректный ввод, на месте знака операции иной символ"); 
                 throw new ArithmeticException();
